@@ -1,22 +1,23 @@
-* { 
+* {
     box-sizing: border-box;
 }
+
 .container {
     display: grid;
 
     gap: 10px;
 
     grid-template-columns: repeat(4 1fr);
-    grid-template-rows: repeat(7,minmax(100px, auto));
+    grid-template-rows: repeat(7, minmax(100px, auto));
 
-    grid-template-areas: 
-    "h h h h"
-    "h h h h"
-    "n m m s"
-    "n m m s"
-    "n m m a"
-    "n m m a"
-    "f f f f";
+    grid-template-areas:
+        "h h h h"
+        "h h h h"
+        "n m m s"
+        "n m m s"
+        "n m m a"
+        "n m m a"
+        "f f f f";
 
 }
 
@@ -24,36 +25,65 @@
     grid-area: h;
     background-color: greenyellow;
 }
+
 .navmenu {
     grid-area: n;
     background-color: honeydew;
 }
+
 .main {
     grid-area: m;
     background-color: khaki;
 }
+
 .sidebar {
     grid-area: s;
     background-color: lightcyan;
 }
+
 .advbar {
     grid-area: a;
     background-color: lightpink;
 }
+
 .footer {
     grid-area: f;
     background-color: lightskyblue;
 }
+
 @media only screen and (max-width:414px) {
+    .container {
+        grid-template-areas:
+            "h h h h"
+            "m m m m"
+            "m m m m"
+            "m m m m"
+            "s s s s"
+            "a a a a"
+            "f f f f";
+    }
+}
+@media only screen and (min-width:414px) and (max-width:768px) {
     .container {
         grid-template-areas: 
         "h h h h"
         "m m m m"
         "m m m m"
         "m m m m"
-        "s s s s"
-        "a a a a"
+        "m m m m"
+        "s s a a"
         "f f f f"; 
     }
 }
-
+@media only screen and (min-width:768px) and (max-width:1024px) {
+    .container {
+        grid-template-areas: 
+        "h h h h"
+        "n m m m"
+        "n m m m"
+        "n m m m"
+        "n m m m"
+        "s s a a"
+        "f f f f";
+    }
+}
