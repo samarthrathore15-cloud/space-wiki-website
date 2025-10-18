@@ -1,14 +1,15 @@
+/* Samarth's */
 * {
     box-sizing: border-box;
 }
-
+/* Container */
 .container {
     display: grid;
 
     gap: 10px;
 
-    grid-template-columns: repeat(4 1fr);
-    grid-template-rows: repeat(7, minmax(100px, auto));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, minmax(100px,700px));
 
     grid-template-areas:
         "h h h h"
@@ -21,48 +22,185 @@
 
 }
 
+.container>div {
+    border-radius: 10px;
+}
+/* Header */
 .header {
     grid-area: h;
-    background-color: greenyellow;
+    background-image: url(/images/banner.jpeg); 
+    background-size: cover;
+    min-height: 40vh;
 }
-
+/* Header—Banner */
+.banner {
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    float: right;
+    width: 50%;
+    text-align: center;
+    padding: 1em;
+}
+/* Nav Menu */
 .navmenu {
     grid-area: n;
     background-color: honeydew;
+    
+    font-size: 1.2em;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    padding: 0 1em;
+    overflow-y: scroll;
 }
 
+.navmenu>h2 {
+    text-align: center;
+}
+
+.navmenu ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 0.2em 0;
+}
+
+.navmenu>ul>li {
+    padding: 0.1em;
+    color: darkslategrey;
+}
+
+.navmenu a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+.navmenu a:hover {
+    cursor: pointer;
+    font-weight: bolder;
+    color: darkcyan;
+}
+/* Main */
 .main {
     grid-area: m;
-    background-color: khaki;
+    
+    background-color: white;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
+.post {
+    margin: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.post img {
+    width: 15vw;
+    min-width: 150px;
+}
+
+.left {
+    float: left;
+    padding: 0 1.5em 1em 0;
+}
+
+.right {
+    float: right;
+        padding: 0 0 1em 1.5em ;
+}
+/* Sidebar */
 .sidebar {
     grid-area: s;
-    background-color: lightcyan;
+    background-color: purple;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
+.sidebar>h3 {
+    text-align: center;
+}
+
+.sidebar iframe {
+    display: block;
+    margin: auto auto;
+    min-width: 20em;
+    width: 100%;
+    height: 80%;
+}
+/* Advertisement Bar */
 .advbar {
     grid-area: a;
     background-color: lightpink;
+    overflow-y: scroll;
 }
 
+.advbar>h3 {
+    text-align: center;
+}
+
+.advbar img {
+    width: 100%;
+    margin: 0 10px 0 10px ;
+}
+
+/* Footer */
 .footer {
     grid-area: f;
-    background-color: lightskyblue;
+    background-color: lightgray;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    text-align: center;
 }
 
+.footer>div {
+    display: inline-block;
+    padding: 0.2em;
+}
+
+.footer>div>ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0.5em;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    font-size: bolder;
+    color: dodgerblue;
+}
+
+.contact {
+    width: 30%;
+}
+
+.v1 {
+    border-left: 2px solid gray;
+    height: 10vh;
+}
+
+/* Mobile Phone */
 @media only screen and (max-width:414px) {
     .container {
         grid-template-areas:
             "h h h h"
-            "m m m m"
+            "n n n n"
             "m m m m"
             "m m m m"
             "s s s s"
             "a a a a"
             "f f f f";
     }
+    .banner {
+        width: 100%;
+    }
 }
+/* Mini Tablet */
 @media only screen and (min-width:414px) and (max-width:768px) {
     .container {
         grid-template-areas: 
@@ -74,7 +212,11 @@
         "s s a a"
         "f f f f"; 
     }
+    .banner {
+        width: 100%; 
+    }
 }
+/* Tablet */
 @media only screen and (min-width:768px) and (max-width:1024px) {
     .container {
         grid-template-areas: 
@@ -83,7 +225,12 @@
         "n m m m"
         "n m m m"
         "n m m m"
-        "s s a a"
+        "s s a a" 
         "f f f f";
     }
+    .banner {
+        width: 100%;
+    }
 }
+
+/* End */
